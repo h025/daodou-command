@@ -1,0 +1,45 @@
+# Node.js 依赖
+node_modules/
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 本地配置
+.env
+.env.*
+.DS_Store
+
+# VSCode 配置
+.vscode/
+
+# Mac 系统文件
+*.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# puppeteer 缓存
+.cache/
+
+# 运行生成的临时文件
+*.log
+*.tmp
+
+# 构建产物
+/dist/
+/build/
+
+# 其他
+*.swp
+
+# 忽略 daodou-cli 相关缓存
+.daodourc/
+
+# 忽略测试文件
+/test-jenkins.js 

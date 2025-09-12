@@ -1,0 +1,35 @@
+{
+  "name": "daodou-command",
+  "version": "1.0.0",
+  "description": "刀豆命令行工具 - 自动化构建和部署",
+  "main": "index.js",
+  "bin": {
+    "dao": "bin/daodou.js"
+  },
+  "scripts": {
+    "start": "node ./bin/daodou.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "刀豆"
+  ],
+  "author": "刀豆团队",
+  "license": "MIT",
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.1",
+    "axios": "^1.12.0",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.1.2",
+    "commander": "^11.1.0",
+    "http-proxy-agent": "^7.0.2",
+    "inquirer": "^8.2.6",
+    "json5": "^2.2.3",
+    "ora": "^5.4.1",
+    "puppeteer": "^24.12.1",
+    "simple-git": "^3.20.0",
+    "ws": "^8.14.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
