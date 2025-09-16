@@ -2,6 +2,8 @@
 
 const { Command } = require('commander');
 const chalk = require('chalk');
+const path = require('path');
+const packageJson = require('../package.json');
 const buildCommand = require('../lib/commands/build');
 const langCommand = require('../lib/commands/lang');
 
@@ -11,7 +13,7 @@ const program = new Command();
 program
   .name('dao')
   .description('刀豆命令行工具 - 自动化构建和部署')
-  .version('1.1.0', '-v, --version');
+  .version(packageJson.version, '-v, --version');
 
 // 添加 build 命令
 program
