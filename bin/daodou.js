@@ -22,7 +22,7 @@ if (!isUpgradeCommand && updateChecker.shouldRemindUpdate()) {
   if (reminder) {
     console.log(chalk.yellow(reminder));
     console.log(); // 空行
-    updateChecker.markAsReminded();
+    // 不标记为已提醒，允许重复提醒
   }
 }
 
