@@ -34,16 +34,16 @@ program
     }
   });
 
-// 添加 update 命令
+// 添加 upgrade 命令
 program
-  .command('update')
+  .command('upgrade')
   .description('检查并更新daodou-command到最新版本')
   .option('-c, --check', '仅检查是否有新版本，不执行更新')
   .option('-f, --force', '强制更新到最新版本')
   .action(async (options) => {
     try {
-      const updateCommand = require('../lib/commands/update');
-      await updateCommand.execute(options);
+      const upgradeCommand = require('../lib/commands/upgrade');
+      await upgradeCommand.execute(options);
     } catch (error) {
       console.error(chalk.red('更新失败:'), error.message);
       process.exit(1);
@@ -91,9 +91,9 @@ program.addHelpText('after', `
   $ dao build --jenkins-url http://jenkins.example.com
   $ dao build --parameters '{"param1":"value1"}'
   
-  $ dao update                                   # 检查并更新到最新版本
-  $ dao update --check                          # 仅检查是否有新版本
-  $ dao update --force                          # 强制更新到最新版本
+  $ dao upgrade                                  # 检查并更新到最新版本
+  $ dao upgrade --check                         # 仅检查是否有新版本
+  $ dao upgrade --force                         # 强制更新到最新版本
   
   $ dao lang add "hello"
   $ dao lang add "hello" "Hello World"
