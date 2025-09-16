@@ -6,8 +6,25 @@ const path = require('path');
 const packageJson = require('../package.json');
 const buildCommand = require('../lib/commands/build');
 const langCommand = require('../lib/commands/lang');
+const updateChecker = require('../lib/utils/update-checker');
 
 const program = new Command();
+
+// 启动后台更新检查
+updateChecker.startBackgroundCheck();
+
+// 检查并显示更新提醒（upgrade命令除外）
+const args = process.argv.slice(2);
+const isUpgradeCommand = args[0] === 'upgrade';
+
+if (!isUpgradeCommand && updateChecker.shouldRemindUpdate()) {
+  const reminder = updateChecker.getUpdateReminder();
+  if (reminder) {
+    console.log(chalk.yellow(reminder));
+    console.log(); // 空行
+    updateChecker.markAsReminded();
+  }
+}
 
 // 设置程序信息
 program
