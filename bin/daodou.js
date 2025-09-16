@@ -10,8 +10,10 @@ const updateChecker = require('../lib/utils/update-checker');
 
 const program = new Command();
 
-// 启动后台更新检查
-updateChecker.startBackgroundCheck();
+// 异步启动后台更新检查，不阻塞主程序
+setImmediate(() => {
+  updateChecker.startBackgroundCheck();
+});
 
 // 检查并显示更新提醒（upgrade命令除外）
 const args = process.argv.slice(2);
