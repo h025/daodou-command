@@ -53,8 +53,15 @@ dao lang remove "hello world"
     jenkinsToken: 'your-jenkins-token',
     jenkinsUsername: 'your-username',
     jenkinsPassword: 'your-password',
-    jobName: 'your-job-name'
+    jobName: 'your-job-name',
+
+    buildParams: {
+      token: 'your-jenkins-token',
+      BUILD_ENV: 'test',
+      version: '0.0.1'
+    }
   },
+  
   lang: {
     defaultLang: 'en',
     defaultDir: './public/locales',
