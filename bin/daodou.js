@@ -11,7 +11,7 @@ const program = new Command();
 program
   .name('dao')
   .description('刀豆命令行工具 - 自动化构建和部署')
-  .version('1.0.0', '-v, --version');
+  .version('1.1.0', '-v, --version');
 
 // 添加 build 命令
 program
