@@ -25,6 +25,11 @@ npm install -g daodou-command
 - 一键升级到最新版本
 - 支持强制更新和仅检查模式
 
+### ⚙️ 配置管理
+- 全局配置和项目配置支持
+- 交互式配置向导
+- 配置文件编辑和管理
+
 ## 快速开始
 
 ### 构建项目
@@ -44,6 +49,21 @@ dao upgrade
 
 # 强制更新
 dao upgrade --force
+```
+
+### 配置管理
+```bash
+# 初始化全局配置
+dao config init
+
+# 查看当前配置
+dao config show
+
+# 编辑配置文件
+dao config edit
+
+# 清除配置文件
+dao config clear
 ```
 
 ### 多语言管理
@@ -102,6 +122,16 @@ dao upgrade                  # 检查并更新到最新版本
 dao upgrade --check         # 仅检查是否有新版本
 dao upgrade --force         # 强制更新到最新版本
 dao upgrade --help          # 查看帮助
+```
+
+### 配置命令
+```bash
+dao config                   # 配置管理向导
+dao config init             # 初始化全局配置
+dao config show             # 显示当前配置
+dao config edit             # 编辑配置文件
+dao config clear            # 清除配置文件
+dao config --help           # 查看帮助
 ```
 
 ### 多语言命令
