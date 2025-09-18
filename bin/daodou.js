@@ -69,6 +69,79 @@ program
     }
   });
 
+// 添加 config 命令
+const configCmd = program
+  .command('config')
+  .description('全局配置管理工具');
+
+configCmd
+  .command('init')
+  .description('初始化全局配置文件')
+  .action(async () => {
+    try {
+      const { ConfigCommand } = require('../lib/commands/config');
+      const configCommand = new ConfigCommand();
+      await configCommand.execute('init');
+    } catch (error) {
+      console.error(chalk.red('初始化失败:'), error.message);
+      process.exit(1);
+    }
+  });
+
+configCmd
+  .command('show')
+  .description('显示当前配置信息')
+  .action(async () => {
+    try {
+      const { ConfigCommand } = require('../lib/commands/config');
+      const configCommand = new ConfigCommand();
+      await configCommand.execute('show');
+    } catch (error) {
+      console.error(chalk.red('显示配置失败:'), error.message);
+      process.exit(1);
+    }
+  });
+
+configCmd
+  .command('edit')
+  .description('编辑配置文件')
+  .action(async () => {
+    try {
+      const { ConfigCommand } = require('../lib/commands/config');
+      const configCommand = new ConfigCommand();
+      await configCommand.execute('edit');
+    } catch (error) {
+      console.error(chalk.red('编辑失败:'), error.message);
+      process.exit(1);
+    }
+  });
+
+configCmd
+  .command('clear')
+  .description('清除配置文件')
+  .action(async () => {
+    try {
+      const { ConfigCommand } = require('../lib/commands/config');
+      const configCommand = new ConfigCommand();
+      await configCommand.execute('clear');
+    } catch (error) {
+      console.error(chalk.red('清除失败:'), error.message);
+      process.exit(1);
+    }
+  });
+
+configCmd
+  .action(async () => {
+    try {
+      const { ConfigCommand } = require('../lib/commands/config');
+      const configCommand = new ConfigCommand();
+      await configCommand.execute();
+    } catch (error) {
+      console.error(chalk.red('配置操作失败:'), error.message);
+      process.exit(1);
+    }
+  });
+
 // 添加 lang 命令
 const langCmd = program
   .command('lang')
@@ -113,6 +186,12 @@ program.addHelpText('after', `
   $ dao upgrade                                  # 检查并更新到最新版本
   $ dao upgrade --check                         # 仅检查是否有新版本
   $ dao upgrade --force                         # 强制更新到最新版本
+  
+  $ dao config                                   # 配置管理向导
+  $ dao config init                            # 初始化全局配置
+  $ dao config show                            # 显示当前配置
+  $ dao config edit                            # 编辑配置文件
+  $ dao config clear                           # 清除配置文件
   
   $ dao lang add "hello"
   $ dao lang add "hello" "Hello World"
