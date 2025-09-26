@@ -17,8 +17,10 @@ npm install -g daodou-command
 
 ### 🌐 多语言管理
 - 支持多语言文件管理
-- 自动翻译功能（Google Translate API）
-- 多代理轮换绕过API限制
+- 多引擎翻译支持（微软、Google、百度、阿里云、有道、DeepL、OpenAI）
+- HTML文档翻译支持，保持标签结构
+- 智能引擎调度和故障转移
+- 灵活的引擎配置和优先级设置
 
 ### 🔄 自动更新
 - 智能版本检查和更新
@@ -65,6 +67,47 @@ dao config edit
 # 清除配置文件
 dao config clear
 ```
+
+### 翻译引擎配置
+支持7种翻译引擎，可在lang命令配置中灵活配置：
+
+```json
+{
+  "lang": {
+    "defaultLang": "en",
+    "defaultDir": "./public/locales",
+    "fileName": "common.json",
+    "translation": {
+      "defaultEngine": "microsoft",
+      "enginePriority": ["microsoft", "google", "baidu", "ali", "youdao", "deepl", "openai"],
+      "engines": {
+        "microsoft": { "enabled": true },
+        "google": { "enabled": true },
+        "baidu": { "enabled": false, "appId": "", "appKey": "" },
+        "ali": { "enabled": false, "accessKeyId": "", "accessKeySecret": "" },
+        "youdao": { "enabled": false, "appId": "", "appKey": "" },
+        "deepl": { "enabled": false, "apiKey": "" },
+        "openai": { "enabled": false, "apiKey": "", "model": "gpt-3.5-turbo" }
+      }
+    }
+  }
+}
+```
+
+**支持的翻译引擎：**
+- **微软翻译**: 免费，无需配置，支持HTML翻译
+- **Google翻译**: 免费，无需配置，支持HTML翻译
+- **百度翻译**: 需要App ID和App Key
+- **阿里云翻译**: 需要AccessKey ID和AccessKey Secret，支持HTML翻译
+- **有道翻译**: 需要App ID和App Key
+- **DeepL翻译**: 需要API Key
+- **OpenAI翻译**: 需要API Key和模型配置，支持HTML翻译
+
+**HTML翻译支持：**
+- 微软翻译：原生支持HTML格式，保持标签结构
+- Google翻译：支持HTML格式翻译
+- 阿里云翻译：支持HTML格式翻译
+- OpenAI翻译：智能识别HTML标签，保持结构完整
 
 ### 多语言管理
 ```bash
