@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1537cb23-f918-4011-a0ed-24da46bf53bc" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/translation/TranslationService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/BaseTranslator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/microsoft/MicrosoftTranslator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/microsoft/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/microsoft/services/EdgeAuthService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/microsoft/services/HttpClient.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/microsoft/services/TranslatorService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/engines/microsoft/types/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/translation/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/commands/lang.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commands/lang.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/proxy-manager.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/translation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="1537cb23-f918-4011-a0ed-24da46bf53bc" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1758879086844</updated>
-      <workItem from="1758879088110" duration="434000" />
+      <workItem from="1758879088110" duration="1148000" />
     </task>
     <servers />
   </component>
