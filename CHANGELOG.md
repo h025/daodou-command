@@ -6,6 +6,20 @@
 并且此项目遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
 
+## [1.4.3] - 2025-11-13
+
+### 修复
+- 修复语言代码映射问题，正确识别 `tw` 为繁体中文（台湾）
+- 明确 `zh` 语言代码映射为简体中文
+- 更新所有7个翻译引擎的语言代码映射规则：
+  - Microsoft Translator: `tw` -> `zh-Hant` (繁体中文)
+  - Google Translator: `tw` -> `zh-tw` (繁体中文)
+  - Baidu Translator: `tw` -> `cht` (繁体中文)
+  - Ali Translator: `tw` -> `zh` (中文)
+  - Youdao Translator: `tw` -> `zh-CHT` (繁体中文)
+  - DeepL Translator: `tw` -> `ZH` (中文)
+  - OpenAI Translator: `tw` -> `繁体中文`，`zh` -> `简体中文`
+
 ## [1.4.2] - 2025-09-26
 
 ### 修复
