@@ -10,21 +10,17 @@ const updateChecker = require('../lib/utils/update-checker');
 
 const program = new Command();
 
-// 异步启动后台更新检查，不阻塞主程序
-setImmediate(() => {
-  updateChecker.startBackgroundCheck();
-});
-
-// 检查并显示更新提醒（upgrade命令除外）
+// 只在实际子命令时检查更新（排除 --help、--version、upgrade）
 const args = process.argv.slice(2);
-const isUpgradeCommand = args[0] === 'upgrade';
+const firstArg = args[0];
+const isSubCommand = firstArg && !firstArg.startsWith('-') && firstArg !== 'upgrade';
 
-if (!isUpgradeCommand && updateChecker.shouldRemindUpdate()) {
+if (isSubCommand) {
+  updateChecker.startBackgroundCheck();
   const reminder = updateChecker.getUpdateReminder();
   if (reminder) {
-    console.log(chalk.yellow(reminder));
-    console.log(); // 空行
-    // 不标记为已提醒，允许重复提醒
+    console.log(reminder);
+    console.log('');
   }
 }
 

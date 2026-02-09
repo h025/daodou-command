@@ -6,6 +6,25 @@
 并且此项目遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
 
+## [1.4.9] - 2026-02-09
+
+### 优化
+- 统一全部命令日志样式（build / lang / config / upgrade）
+  - 使用 ora spinner + indent:2 + chalk.dim 配色
+  - 移除冗余 emoji 和步骤编号
+- 优化 `dao lang` 日志：每个语言一行 spinner，成功直接显示翻译结果
+- 优化 `dao config show`：递归打印配置，敏感字段自动隐藏为 ********
+- 优化 `dao upgrade`：安装过程使用 spinner，不再刷屏 npm 输出
+- 移除微软翻译引擎 token 刷新的调试日志
+- 翻译引擎调度器改为静默模式，不再逐个打印引擎切换信息
+
+### 修复
+- 修复后台更新检查三层异步嵌套导致请求在进程退出前未完成的问题
+- 修复更新提醒消息被 chalk.yellow 双重包裹导致颜色异常
+- 移除 shouldRemindUpdate / markAsReminded 死代码
+- 更新状态文件从 ~/.daodou-update-state.json 迁移到 ~/.daodou/update-state.json
+- `dao --help` / `dao -v` 等非子命令不再触发后台更新检查
+
 ## [1.4.8] - 2026-02-09
 
 ### 修复
