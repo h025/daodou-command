@@ -37,7 +37,7 @@ program
   .option('-j, --jenkins-url <url>', 'Jenkins服务器地址')
   .option('-u, --username <username>', 'Jenkins用户名')
   .option('-t, --token <token>', 'Jenkins API Token')
-  .option('-j, --job-name <name>', 'Jenkins任务名称')
+  .option('-n, --job-name <name>', 'Jenkins任务名称')
   .option('-b, --branch <branch>', '指定分支名称（默认从Git自动检测）')
   .option('-p, --parameters <params>', '额外的构建参数 (JSON格式)')
   .action(async (options) => {
