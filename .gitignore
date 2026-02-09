@@ -38,7 +38,8 @@ Icon?
 # 其他
 *.swp
 
-# 忽略 daodou-cli 相关缓存
+# 忽略 daodou 配置和缓存（含敏感凭据）
+.daodourc
 .daodourc/
 
 # 忽略测试文件

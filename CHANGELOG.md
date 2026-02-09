@@ -6,6 +6,24 @@
 并且此项目遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
 
+## [1.4.8] - 2026-02-09
+
+### 修复
+- 修复 Jenkins Session 过期问题，两次构建间隔数小时后不再需要重新登录
+  - 通过 CDP 捕获 Casdoor 长期 Cookie（30天有效），实现静默 SSO 刷新
+  - Session 过期时自动走 Casdoor 重定向链刷新，无需启动浏览器
+  - 登录时自动勾选"记住我"，延长 Casdoor Session 有效期
+- 修复 Cookie 同步问题
+  - 响应拦截器更新 Cookie 时同步到 allCookies，避免数据不一致
+  - SSO 刷新时跟随最多 5 次重定向，收集完整 Set-Cookie
+  - Cookie 解析增加 trim 处理，防止空格导致重复条目
+- 修复 `.gitignore` 未排除 `.daodourc` 配置文件（含敏感凭据）的问题
+
+### 优化
+- 统一构建流程日志样式，使用 ora spinner + chalk 配色
+- 移除构建前的回车确认步骤，登录成功后直接开始构建
+- 构建计时器改用独立 200ms 定时器，数字不再跳动
+
 ## [1.4.7] - 2025-12-04
 
 ### 修复
